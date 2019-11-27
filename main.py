@@ -9,7 +9,7 @@ print("how many pages do you want to screenshot?")
 n = input()
 
 for i in n:
-  keyboard.press_and_release('prt scn')
+  keyboard.press_and_release('print_screen')
   keyboard.press_and_release('right arrow')
   pause(5) // to be sure that we're in the next page
   
