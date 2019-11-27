@@ -2,7 +2,7 @@
 # PS : you might want to customize this code a little bit (mostly if it doesn't go to the next page with ->)
 
 import keyboard
-import pause
+import time
 
 print("how many pages do you want to screenshot?")
 
@@ -12,9 +12,9 @@ print("Ok! We'll start as soon as you'll press 'S'")
 
 keyboard.wait('S')
 
-for i in n:
+for i in range(1,n,1):
   keyboard.press_and_release('print_screen')
   keyboard.press_and_release('right arrow')
-  pause(5) # to be sure that we're in the next page
+  time.sleep(5) # to be sure that we're in the next page
   
 print("We're done here :)")
