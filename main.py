@@ -8,6 +8,10 @@ print("how many pages do you want to screenshot?")
 
 n = input()
 
+print("Ok! We'll start as soon as you'll press 'S'")
+
+keyboard.wait('S')
+
 for i in n:
   keyboard.press_and_release('print_screen')
   keyboard.press_and_release('right arrow')
