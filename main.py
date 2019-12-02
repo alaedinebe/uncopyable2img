@@ -40,7 +40,7 @@ elif choice == 2 :
     y2 = input()
 
     for i in range(0,int(n),1):
-        links = str(i) + ".png"
+        links = "2019-12-02 (" + str(i) + ").png" #TODO : make it more adaptive
         images = Image.open(links)
         cropped_images = images.crop((x1,y1,x2,y2)) #left, top, right, bottom
         cropped_images.save(str(i)+".png")
