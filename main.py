@@ -3,6 +3,8 @@ import time #to pause
 from PIL import Image #to crop
 from fpdf import FPDF #to create the PDF
 from tqdm import tqdm_notebook #to get some progress insights
+from os import listdir #to get files to crop
+from os.path import isfile, join #same
 
 print("What do you want to do?\nEnter 1 for screenshot\nEnter 2 for cropping")
 
@@ -25,6 +27,8 @@ if choice == 1:
         
 elif choice == 2 :
     
+    # IMPORTANT : you need to execute the script in the folder that contains the images to crop
+    
     print("Hi there! How many pages do you want to crop?")
     n = input()
 
@@ -38,9 +42,11 @@ elif choice == 2 :
     x2 = input()
     print("y2")
     y2 = input()
+    
+    images = [f for f in listdir("") if isfile(join("", f))]
 
     for i in range(0,int(n),1):
-        links = "2019-12-02 (" + str(i) + ").png" #TODO : make it more adaptive
+        links = images[i]
         images = Image.open(links)
         cropped_images = images.crop((x1,y1,x2,y2)) #left, top, right, bottom
         cropped_images.save(str(i)+".png")
